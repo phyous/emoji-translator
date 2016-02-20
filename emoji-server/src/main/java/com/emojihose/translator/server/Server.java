@@ -5,10 +5,15 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import ro.pippo.controller.ControllerApplication;
 import ro.pippo.core.Pippo;
+import ro.pippo.core.PippoRuntimeException;
 import ro.pippo.core.RedirectHandler;
 import ro.pippo.core.TemplateHandler;
 import ro.pippo.core.route.RouteContext;
 import ro.pippo.core.route.RouteHandler;
+import ro.pippo.freemarker.FreemarkerTemplateEngine;
+
+import java.io.File;
+import java.io.IOException;
 
 public class Server {
 
@@ -23,6 +28,7 @@ public class Server {
     static class EmojiTranslatorApp extends ControllerApplication {
         @Override
         protected void onInit() {
+            setTemplateEngine(new FreemarkerTemplateEngine());
             
             // Audit filter
             ALL("/.*", new RouteHandler() {

@@ -125,7 +125,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <java.version>1.8</java.version>
-    <pippo.version>0.9.0-SNAPSHOT</pippo.version>
+    <pippo.version>0.8.0</pippo.version>
   </properties>
 
 </project>
