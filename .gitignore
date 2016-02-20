@@ -3,8 +3,10 @@
 
 # Folders
 .mtj.tmp/
-.idea/
-target/
+.idea
+target
+
+dependency-reduced-pom.xml
 
 # Package Files #
 *.jar
