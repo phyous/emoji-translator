@@ -13,6 +13,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -26,30 +27,48 @@ public class ModelBuilder {
     public static void main(String[] args) throws java.io.IOException {
         String emojiFile = args[0];
         String dictionaryFile = args[1];
+        String partsOfSpeechFile = args[2];
+        String toTranslate = args[3];
 
-        Map<String, List<String>> emojiMapping;
-        Map<String, List<String>> wordGraph;
+        ModelBuilder builder;
+
         try {
-            emojiMapping = generateEmojiMapping(emojiFile);
-            // TODO: We might want to also invert the mapping to open up the list of words to the values in the thesaurus
-            wordGraph = generateDictioanryMapping(dictionaryFile);
+          builder = new ModelBuilder(emojiFile, dictionaryFile, partsOfSpeechFile);
         } catch (Exception e) {
             e.printStackTrace();
             return;
         }
-
-        // Queue for our BFS to map words to emojis
-        final Queue<String> workingQueue = new LinkedList<>();
         
-        // The final model for emojis to words
-        final Map<String, String> wordToEmojiMap = new HashMap<>();
+        final Map<String, String> wordToEmojiMap = builder.build();
 
+        System.out.println(translateSentence(toTranslate, wordToEmojiMap));
+    }
+
+    // The final model for emojis to words
+    final Map<String, String> wordToEmojiMap;
+    // Queue for our BFS to map words to emojis
+    final Queue<String> workingQueue;
+
+    final Map<String, List<String>> emojiMapping;
+    final Map<String, List<String>> wordGraph;
+    final Set<String> articles;
+
+    public ModelBuilder(String emojiFile, String dictionaryFile, String partsOfSpeechFile) throws Exception {
+        emojiMapping = generateEmojiMapping(emojiFile);
+        // TODO: We might want to also invert the mapping to open up the list of words to the values in the thesaurus
+        wordGraph = generateDictionaryMapping(dictionaryFile);
+        articles = generateArticlesSet(partsOfSpeechFile);
+        wordToEmojiMap = new HashMap<>();
+        workingQueue = new LinkedList<>();
+    }
+
+    public Map<String, String> build() {
         // Seed the wordToEmojiMap with words in emojiMapping
         emojiMapping.entrySet().stream()
             .forEach(x -> {
                 final String emoji = x.getKey();
                 final List<String> wordsAssociatedWithEmoji = x.getValue();
-                processNewWords(emoji, wordsAssociatedWithEmoji, workingQueue, wordToEmojiMap);
+                processNewWords(emoji, wordsAssociatedWithEmoji);
             });
         
         // Process workingQueue to add new mappings of word -> emoji
@@ -59,11 +78,11 @@ public class ModelBuilder {
             final String mappedEmoji = wordToEmojiMap.get(wordKey.toLowerCase());
             List<String> synonyms = wordGraph.getOrDefault(wordKey, ImmutableList.of());
             if (!synonyms.isEmpty()) {
-                processNewWords(mappedEmoji, synonyms, workingQueue, wordToEmojiMap);    
+                processNewWords(mappedEmoji, synonyms);    
             } 
         }
-        
-        System.out.println(translateSentence(args[2], wordToEmojiMap));
+
+        return wordToEmojiMap;
     }
     
     private static String translateSentence(String sentence, Map<String, String> wordToEmojiMap) {
@@ -74,18 +93,16 @@ public class ModelBuilder {
         );
     }
     
-    private static void processNewWords(String emoji, 
-                                       List<String> wordList, 
-                                       Queue<String> queue, 
-                                       Map<String, String> wordToEmojiMap) {
+    private void processNewWords(String emoji, List<String> wordList) {
         wordList.stream().forEach(word -> {
-            final String ret = wordToEmojiMap.putIfAbsent(word.toLowerCase(), emoji);
-            if (ret == null) queue.add(word);
+            if (!articles.contains(word)) {
+                final String ret = wordToEmojiMap.putIfAbsent(word.toLowerCase(), emoji);
+                if (ret == null) workingQueue.add(word);
+            }
         });
-        
     }
     
-    private static Map<String, List<String>> generateEmojiMapping(String file) throws Exception {
+    private Map<String, List<String>> generateEmojiMapping(String file) throws Exception {
         Map<String, List<String>> emojiMapping = new HashMap<>();
         
         try(BufferedReader br = new BufferedReader(new FileReader(file))) {
@@ -100,7 +117,7 @@ public class ModelBuilder {
         return emojiMapping;
     }
 
-    private static Map<String, List<String>> generateDictioanryMapping(String file) throws Exception {
+    private Map<String, List<String>> generateDictionaryMapping(String file) throws Exception {
         Map<String, List<String>> wordGraph = new HashMap<>();
         
         try(BufferedReader br = new BufferedReader(new FileReader(file))) {
@@ -113,5 +130,22 @@ public class ModelBuilder {
         }
         
         return wordGraph;
+    }
+
+    private Set<String> generateArticlesSet(String file) throws Exception {
+        Set<String> articles = new HashSet<>();
+
+        try(BufferedReader br = new BufferedReader(new FileReader(file))) {
+            for(String line; (line = br.readLine()) != null; ) {
+                String[] wordAndType = line.split("\\\\");
+                String word = wordAndType[0];
+                String typ = wordAndType[1];
+                if(typ.indexOf("A") >= 0 || typ.indexOf("I") >= 0) {
+                    articles.add(word);
+                }
+            }
+        }
+
+        return articles;
     }
 }
