@@ -44,7 +44,8 @@ public class Server {
             });
 
             // Web resources
-            GET("/", new TemplateHandler("base"));
+            GET("/", new TemplateHandler("home"));
+            GET("/about", new TemplateHandler("about"));
             
             // API
             GET("/api/translate", TranslatorController.class, "translate");
