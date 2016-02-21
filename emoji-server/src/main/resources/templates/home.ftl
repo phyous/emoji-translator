@@ -10,7 +10,9 @@
       <label id="translationResult" class="sr-only">translated text</label>
     </div>
     <div class="form-group">
-      <button id="submitButton" class="btn btn-lg btn-primary btn-block" type="submit">Emoj-it!</button>
+      <div class="center-block" style="max-width:200px">
+        <button id="submitButton" class="btn btn-lg btn-primary btn-block" type="submit">Emoj-it!</button>
+      </div>
     </div>
     <div class="form-group">
       <h2 id="translatedText"></h2>
