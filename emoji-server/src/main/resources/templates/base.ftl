@@ -33,6 +33,24 @@
   <script src="${publicAt('js/translator.js')}"></script>
   <base href="${contextPath}/">
 
+  <link rel="apple-touch-icon" sizes="57x57" href="${publicAt('img/apple-icon-57x57.png')}" >
+  <link rel="apple-touch-icon" sizes="60x60" href="${publicAt('img/apple-icon-60x60.png')}">
+  <link rel="apple-touch-icon" sizes="72x72" href="${publicAt('img/apple-icon-72x72.png')}">
+  <link rel="apple-touch-icon" sizes="76x76" href="${publicAt('img/apple-icon-76x76.png')}">
+  <link rel="apple-touch-icon" sizes="114x114" href="${publicAt('img/apple-icon-114x114.png')}">
+  <link rel="apple-touch-icon" sizes="120x120" href="${publicAt('img/apple-icon-120x120.png')}">
+  <link rel="apple-touch-icon" sizes="144x144" href="${publicAt('img/apple-icon-144x144.png')}">
+  <link rel="apple-touch-icon" sizes="152x152" href="${publicAt('img/apple-icon-152x152.png')}">
+  <link rel="apple-touch-icon" sizes="180x180" href="${publicAt('img/apple-icon-180x180.png')}">
+  <link rel="icon" type="image/png" sizes="192x192"  href="${publicAt('img/android-icon-192x192.png')}">
+  <link rel="icon" type="image/png" sizes="32x32" href="${publicAt('img/favicon-32x32.png')}">
+  <link rel="icon" type="image/png" sizes="96x96" href="${publicAt('img/favicon-96x96.png')}">
+  <link rel="icon" type="image/png" sizes="16x16" href="${publicAt('img/favicon-16x16.png')}">
+  <link rel="manifest" href="${publicAt('img/manifest.json')}">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
   <#--google analytics-->
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
