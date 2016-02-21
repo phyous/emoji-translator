@@ -16,8 +16,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Queue;
 import java.util.Set;
-import java.util.function.Function;
-import java.util.stream.Stream;
+import java.util.stream.Collectors;
 
 public class ModelBuilder {
     
@@ -131,7 +130,13 @@ public class ModelBuilder {
                 String[] items = line.split(",", 2);
                 String key = items[0];
                 List<String> words = Arrays.asList(items[1].split(","));
-                wordGraph.put(key, words);
+
+                // Trim out any phrases from the thesaurus
+                List<String> filteredWords = words.stream()
+                        .filter( x -> !x.contains(" "))
+                        .collect(Collectors.toList());
+
+                wordGraph.put(key, filteredWords);
             }
         }
         

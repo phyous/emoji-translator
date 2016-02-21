@@ -123,15 +123,15 @@
 👥,people
 🚶,hike;walk;walking
 🏃,marathon;run;running
-👯,bunny;dancer;ear;girl;woman
+👯,bunny;dancer;ear;girl;woman;dance
 💃,dancer
 🕴,business;man;suit
 💏,couple;romance
 💑,couple;heart;love;romance;like
 👪,child;father;mother
 👫,couple;hand;hold;man;woman;heteronormative
-👬,couple;hand;hold;man;twins;zodiac
-👭,couple;hand;hold;woman
+👬,couple;hand;hold;man;twins;zodiac;gay
+👭,couple;hand;hold;woman;lesbian
 💪,biceps;flex;muscle
 👈,point
 👉,point
@@ -234,7 +234,7 @@
 🦄,face;unicorn
 🐮,cow;face
 🐂,bull;taurus;zodiac
-🐃,buffalo;water
+🐃,buffalo;water buffalo
 🐄,cow
 🐷,face;pig
 🐖,sow
@@ -352,13 +352,13 @@
 🍢,kebab;seafood;skewer;stick
 🍣,sushi
 🍤,fried;prawn;shrimp;tempura
-🍥,cake;fish;pastry;swirl
+🍥,fish cake;fishcake;swirl
 🍡,dessert;japanese;skewer;stick;sweet
 🍦,cream;dessert;ice;icecream;soft;sweet
 🍧,dessert;ice;shaved;sweet
 🍨,cream;dessert;ice;sweet
 🍩,dessert;donut;sweet
-🍪,dessert;sweet
+🍪,dessert;sweet;cookie
 🎂,birthday;cake;celebration;dessert;pastry;sweet
 🍰,cake;dessert;pastry;slice;sweet
 🍫,bar;chocolate;dessert;sweet
@@ -506,7 +506,7 @@
 🛏,hotel;sleep
 🛋,couch;hotel;lamp
 🚽,toilet
-🚿,water
+🚿,shower
 🛀,bathtub;bath
 🛁,bath
 ⌛,sand;timer

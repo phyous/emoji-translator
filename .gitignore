@@ -1,5 +1,7 @@
 ### Java template
 *.class
+*.iml
+*.log
 
 # Folders
 .mtj.tmp/
