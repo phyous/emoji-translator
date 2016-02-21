@@ -1,5 +1,6 @@
 package com.emojihose.translator.training;
 
+import com.google.common.base.Joiner;
 import com.google.common.collect.ImmutableList;
 
 import java.io.BufferedReader;
@@ -32,17 +33,19 @@ public class ModelBuilder {
             return;
         }
         
-        final Map<String, String> wordToEmojiMap = builder.build();
+        final Map<String, EmojiModelPair> wordToEmojiMap = builder.build();
 
         PrintWriter writer = new PrintWriter(outputFile, "UTF-8");
         wordToEmojiMap.entrySet().stream().forEach(x -> {
-            writer.println(x.getKey() + "," + x.getValue());
+            EmojiModelPair pair = x.getValue();
+            String pathString = Joiner.on(";").join(pair.getPath());
+            writer.println(x.getKey() + "," + pair.getEmoji() + "," + pathString);
         });
         writer.close();
     }
 
     // The final model for emojis to words
-    final Map<String, String> wordToEmojiMap;
+    final Map<String, EmojiModelPair> wordToEmojiMap;
     // Queue for our BFS to map words to emojis
     final Queue<String> workingQueue;
 
@@ -59,33 +62,39 @@ public class ModelBuilder {
         workingQueue = new LinkedList<>();
     }
 
-    public Map<String, String> build() {
+    public Map<String, EmojiModelPair> build() {
         // Seed the wordToEmojiMap with words in emojiMapping
         emojiMapping.entrySet().stream()
             .forEach(x -> {
                 final String emoji = x.getKey();
+                final List<String> path = new LinkedList<String>();
+                final EmojiModelPair pair = new EmojiModelPair(emoji, path);
                 final List<String> wordsAssociatedWithEmoji = x.getValue();
-                processNewWords(emoji, wordsAssociatedWithEmoji);
+                processNewWords(pair, wordsAssociatedWithEmoji);
             });
         
         // Process workingQueue to add new mappings of word -> emoji
         while(!workingQueue.isEmpty()) {
             
             String wordKey = workingQueue.remove();
-            final String mappedEmoji = wordToEmojiMap.get(wordKey.toLowerCase());
+            final EmojiModelPair pair = wordToEmojiMap.get(wordKey.toLowerCase());
+            final String mappedEmoji = pair.getEmoji();
+            final List<String> pathCopy = new LinkedList<String>(pair.getPath());
+            pathCopy.add(0, wordKey);
+            EmojiModelPair newPair = new EmojiModelPair(mappedEmoji, pathCopy);
             List<String> synonyms = wordGraph.getOrDefault(wordKey, ImmutableList.of());
             if (!synonyms.isEmpty()) {
-                processNewWords(mappedEmoji, synonyms);    
+                processNewWords(newPair, synonyms);
             } 
         }
 
         return wordToEmojiMap;
     }
     
-    private void processNewWords(String emoji, List<String> wordList) {
+    private void processNewWords(EmojiModelPair pair, List<String> wordList) {
         wordList.stream().forEach(word -> {
             if (!articles.contains(word.toLowerCase())) {
-                final String ret = wordToEmojiMap.putIfAbsent(word.toLowerCase(), emoji);
+                final EmojiModelPair ret = wordToEmojiMap.putIfAbsent(word.toLowerCase(), pair);
                 if (ret == null) workingQueue.add(word);
             }
         });
