@@ -1,5 +1,6 @@
 package com.emojihose.translator.training;
 
+import com.emojihose.translator.training.helper.StringFunctions;
 import com.google.common.base.Joiner;
 import com.google.common.collect.ImmutableList;
 
@@ -15,14 +16,16 @@ import java.util.List;
 import java.util.Map;
 import java.util.Queue;
 import java.util.Set;
+import java.util.function.Function;
+import java.util.stream.Stream;
 
 public class ModelBuilder {
     
     public static void main(String[] args) throws java.io.IOException {
-        String emojiFile = args[0];
-        String dictionaryFile = args[1];
-        String partsOfSpeechFile = args[2];
-        String outputFile = args[3];
+        final String emojiFile          = args[0];
+        final String dictionaryFile     = args[1];
+        final String partsOfSpeechFile  = args[2];
+        final String outputFile         = args[3];
 
         ModelBuilder builder;
 
@@ -82,7 +85,7 @@ public class ModelBuilder {
             String wordKey = workingQueue.remove();
             final EmojiModelPair pair = wordToEmojiMap.get(wordKey.toLowerCase());
             final String mappedEmoji = pair.getEmoji();
-            final List<String> pathCopy = new LinkedList<String>(pair.getPath());
+            final List<String> pathCopy = new LinkedList<>(pair.getPath());
             pathCopy.add(0, wordKey);
             EmojiModelPair newPair = new EmojiModelPair(mappedEmoji, pathCopy);
             List<String> synonyms = wordGraph.getOrDefault(wordKey, ImmutableList.of());
@@ -95,7 +98,9 @@ public class ModelBuilder {
     }
     
     private void processNewWords(EmojiModelPair pair, List<String> wordList) {
-        wordList.stream().forEach(word -> {
+        wordList.stream()
+            .flatMap(StringFunctions.generateWordAndPlural)
+            .forEach(word -> {
             if (!articles.contains(word.toLowerCase())) {
                 final EmojiModelPair ret = wordToEmojiMap.putIfAbsent(word.toLowerCase(), pair);
                 if (ret == null) workingQueue.add(word);
