@@ -1,6 +1,6 @@
 function invokeShare(urlFormat)
 {
-    var shareUrl = urlFormat.replace("{0}",  window.location);
+    var shareUrl = urlFormat.replace("{0}", encodeURI(window.location)).replace("{1}",  $("#translatedText").text());
     window.open(shareUrl, "_blank");
 }
 
