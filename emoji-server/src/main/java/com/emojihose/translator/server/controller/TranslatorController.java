@@ -52,7 +52,7 @@ public class TranslatorController extends Controller {
             patternNoSpaces
         );
 
-        log.info(String.format("=== Translate[%s] -> [%s]", sentence, ret));
+        log.info(String.format("Translation request [%s] -> [%s]", sentence, ret));
         
         return ret;
     }
