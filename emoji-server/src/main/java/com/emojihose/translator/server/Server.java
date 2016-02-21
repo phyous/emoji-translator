@@ -5,6 +5,8 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.HashMap;
 import java.util.Map;
+
+import com.emojihose.translator.server.helper.EmojiMapSingleton;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import ro.pippo.controller.ControllerApplication;
@@ -18,21 +20,9 @@ public class Server {
 
     private static final Logger log = LoggerFactory.getLogger(Server.class);
 
-    public static Map<String, String> wordToEmojiMap;
-    
     public static void main(String[] args) {
         String mappingFile = args[0];
-        wordToEmojiMap = new HashMap<>();
-
-        try(BufferedReader br = new BufferedReader(new FileReader(mappingFile))) {
-            for(String line; (line = br.readLine()) != null; ) {
-                String[] items = line.split(",");
-                wordToEmojiMap.put(items[0], items[1]);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-            return;
-        }
+        EmojiMapSingleton.init(mappingFile);
 
         Pippo pippo = new Pippo(new EmojiTranslatorApp());
         pippo.getApplication().addPublicResourceRoute();
