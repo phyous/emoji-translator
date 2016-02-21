@@ -1,4 +1,8 @@
-// A $( document ).ready() block.
+function invokeShare(urlFormat)
+{
+    var shareUrl = urlFormat.replace("{0}",  window.location);
+    window.open(shareUrl, "_blank");
+}
 
 function translateText(textToTranslate) {
     history.pushState(null, null, window.location.origin + "?text=" + encodeURI(textToTranslate));
