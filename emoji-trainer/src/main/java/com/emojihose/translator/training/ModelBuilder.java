@@ -26,6 +26,8 @@ public class ModelBuilder {
 
         ModelBuilder builder;
 
+        System.out.println("=== Started building model");
+        
         try {
           builder = new ModelBuilder(emojiFile, dictionaryFile, partsOfSpeechFile);
         } catch (Exception e) {
@@ -42,6 +44,7 @@ public class ModelBuilder {
             writer.println(x.getKey() + "," + pair.getEmoji() + "," + pathString);
         });
         writer.close();
+        System.out.println("=== FINISHED building model");
     }
 
     // The final model for emojis to words
