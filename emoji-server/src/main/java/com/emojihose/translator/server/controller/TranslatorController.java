@@ -52,7 +52,7 @@ public class TranslatorController extends Controller {
             patternNoSpaces
         );
 
-        log.info(String.format("Translation request [%s] -> [%s]", sentence, ret));
+        log.info(String.format("Translation from (%s): [%s] -> [%s]", getRequest().getClientIp(), sentence, ret));
         
         return ret;
     }
