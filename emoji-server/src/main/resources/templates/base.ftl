@@ -27,6 +27,12 @@
   <#--Linkedin profiles-->
   <script src="//platform.linkedin.com/in.js" type="text/javascript"></script>
   
+  <link href="${publicAt('css/style.css')}" rel="stylesheet">
+  <link href="${publicAt('css/bootstrap-social.css')}" rel="stylesheet">
+  <link href="${publicAt('css/docs.css')}" rel="stylesheet">
+  <script src="${publicAt('js/translator.js')}"></script>
+  <base href="${contextPath}/">
+
   <#--google analytics-->
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -37,12 +43,6 @@
     ga('create', 'UA-39530399-2', 'auto');
     ga('send', 'pageview');
   </script>
-
-  <link href="${publicAt('css/style.css')}" rel="stylesheet">
-  <link href="${publicAt('css/bootstrap-social.css')}" rel="stylesheet">
-  <link href="${publicAt('css/docs.css')}" rel="stylesheet">
-  <script src="${publicAt('js/translator.js')}"></script>
-  <base href="${contextPath}/">
 </head>
 <body>
 
