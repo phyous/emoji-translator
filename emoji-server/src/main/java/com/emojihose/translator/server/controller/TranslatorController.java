@@ -1,6 +1,7 @@
 package com.emojihose.translator.server.controller;
 
 import com.emojihose.translator.server.Server;
+import com.emojihose.translator.server.helper.EmojiMapSingleton;
 import com.google.common.base.Joiner;
 
 import java.util.Arrays;
@@ -19,37 +20,14 @@ public class TranslatorController extends Controller {
 
     private static final Logger log = LoggerFactory.getLogger(TranslatorController.class);
     
-    Map<String, String> wordToEmojiMap;
-    Pattern patternWithSpaces;
-    Pattern patternNoSpaces;
-
-    public TranslatorController() {
-        this.wordToEmojiMap = Server.wordToEmojiMap;
-        String pattern = Joiner.on("|").join(wordToEmojiMap.entrySet().stream()
-            .map(x -> x.getKey())
-            .filter(x -> x.indexOf(" ") != -1 || x.indexOf("-") != -1)
-            .map(x -> "(" + Pattern.quote(x) + ")")
-            .collect(Collectors.toList()));
-        String composite = "(?<!\\w)(?iu)(" + pattern + ")(?!\\w)";
-        patternWithSpaces = Pattern.compile(composite);
-
-        pattern = Joiner.on("|").join(wordToEmojiMap.entrySet().stream()
-            .map(x -> x.getKey())
-            .filter(x -> x.indexOf(" ") == -1 && x.indexOf("-") == -1)
-            .map(x -> "(" + Pattern.quote(x) + ")")
-            .collect(Collectors.toList()));
-        composite = "(?<!\\w)(?iu)(" + pattern + ")(?!\\w)";
-        patternNoSpaces = Pattern.compile(composite);
-    }
-
     public void translate(@Param("text") String text) {
         getResponse().text(translateSentence(text));
     }
 
     private String translateSentence(String sentence) {
         String ret = applyPattern(
-            applyPattern(sentence, patternWithSpaces),
-            patternNoSpaces
+            applyPattern(sentence, EmojiMapSingleton.getInstance().getPatternWithSpaces()),
+            EmojiMapSingleton.getInstance().getPatternNoSpaces()
         );
 
         log.info(String.format("Translation from (%s): [%s] -> [%s]", getRequest().getClientIp(), sentence, ret));
@@ -66,7 +44,7 @@ public class TranslatorController extends Controller {
             constructed =
                 constructed +
                 text.substring(lastIndex, m.start()) +
-                wordToEmojiMap.get(word.toLowerCase()) +
+                    EmojiMapSingleton.getInstance().getWordToEmojiMap().get(word.toLowerCase()) +
                 text.substring(m.start() + word.length(), m.end());
             lastIndex = m.end();
         }
