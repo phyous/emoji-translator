@@ -91,7 +91,7 @@ public class ModelBuilder {
     
     private void processNewWords(String emoji, List<String> wordList) {
         wordList.stream().forEach(word -> {
-            if (!articles.contains(word)) {
+            if (!articles.contains(word.toLowerCase())) {
                 final String ret = wordToEmojiMap.putIfAbsent(word.toLowerCase(), emoji);
                 if (ret == null) workingQueue.add(word);
             }
@@ -136,8 +136,8 @@ public class ModelBuilder {
                 String[] wordAndType = line.split("\\\\");
                 String word = wordAndType[0];
                 String typ = wordAndType[1];
-                if(typ.indexOf("A") >= 0 || typ.indexOf("I") >= 0) {
-                    articles.add(word);
+                if(typ.indexOf("D") >= 0 || typ.indexOf("I") >= 0) {
+                    articles.add(word.toLowerCase());
                 }
             }
         }
