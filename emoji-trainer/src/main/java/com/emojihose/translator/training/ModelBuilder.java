@@ -28,7 +28,7 @@ public class ModelBuilder {
         String emojiFile = args[0];
         String dictionaryFile = args[1];
         String partsOfSpeechFile = args[2];
-        String toTranslate = args[3];
+        String outputFile = args[3];
 
         ModelBuilder builder;
 
@@ -41,7 +41,11 @@ public class ModelBuilder {
         
         final Map<String, String> wordToEmojiMap = builder.build();
 
-        System.out.println(translateSentence(toTranslate, wordToEmojiMap));
+        PrintWriter writer = new PrintWriter(outputFile, "UTF-8");
+        wordToEmojiMap.entrySet().stream().forEach(x -> {
+            writer.println(x.getKey() + "," + x.getValue());
+        });
+        writer.close();
     }
 
     // The final model for emojis to words
@@ -83,14 +87,6 @@ public class ModelBuilder {
         }
 
         return wordToEmojiMap;
-    }
-    
-    private static String translateSentence(String sentence, Map<String, String> wordToEmojiMap) {
-        return Joiner.on(" ").join(
-            Arrays.asList(sentence.split(" ")).stream()
-            .map(x -> wordToEmojiMap.getOrDefault(x.toLowerCase(), x))
-            .collect(Collectors.toList())
-        );
     }
     
     private void processNewWords(String emoji, List<String> wordList) {
