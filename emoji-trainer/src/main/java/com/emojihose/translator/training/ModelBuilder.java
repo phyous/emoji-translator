@@ -1,26 +1,19 @@
 package com.emojihose.translator.training;
 
-import com.google.common.base.Joiner;
 import com.google.common.collect.ImmutableList;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileReader;
-import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
-import java.net.URL;
-import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.HashSet;
+import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 import java.util.Queue;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 public class ModelBuilder {
     
@@ -99,7 +92,7 @@ public class ModelBuilder {
     }
     
     private Map<String, List<String>> generateEmojiMapping(String file) throws Exception {
-        Map<String, List<String>> emojiMapping = new HashMap<>();
+        Map<String, List<String>> emojiMapping = new LinkedHashMap<>();
         
         try(BufferedReader br = new BufferedReader(new FileReader(file))) {
             for(String line; (line = br.readLine()) != null; ) {
@@ -114,7 +107,7 @@ public class ModelBuilder {
     }
 
     private Map<String, List<String>> generateDictionaryMapping(String file) throws Exception {
-        Map<String, List<String>> wordGraph = new HashMap<>();
+        Map<String, List<String>> wordGraph = new LinkedHashMap<>();
         
         try(BufferedReader br = new BufferedReader(new FileReader(file))) {
             for(String line; (line = br.readLine()) != null; ) {
@@ -129,7 +122,7 @@ public class ModelBuilder {
     }
 
     private Set<String> generateArticlesSet(String file) throws Exception {
-        Set<String> articles = new HashSet<>();
+        Set<String> articles = new LinkedHashSet<>();
 
         try(BufferedReader br = new BufferedReader(new FileReader(file))) {
             for(String line; (line = br.readLine()) != null; ) {
