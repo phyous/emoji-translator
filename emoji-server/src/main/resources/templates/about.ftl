@@ -16,7 +16,7 @@
     </h1>
     
   </div>
-  <p>The gentlemen behind emojit</p>
+  <p>The developers behind emojit</p>
 
 
   <div class="bs-example container-fluid" data-example-id="thumbnails-with-custom-content">
