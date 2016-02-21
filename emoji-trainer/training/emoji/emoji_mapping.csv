@@ -139,7 +139,7 @@
 👆,backhand;body;finger;hand;index;point;up
 🖕,body;finger;hand;fuck you;bird
 👇,backhand;body;down;finger;hand;index;point
-✌,body;hand;v;victory
+✌,body;hand;victory
 🖖,body;finger;hand;spock;vulcan
 🤘,body;finger;hand;horns;rock-on
 🖐,body;finger;hand;splayed
@@ -875,11 +875,11 @@
 ⚜,fleur-de-lis
 🔰,beginner;chevron;green;japanese;leaf;tool;yellow
 🔱,anchor;emblem;ship;tool;trident
-⭕,circle;o
+⭕,circle
 ✅,check;mark
 ☑,ballot;box;check
 ✔,check;mark
-✖,cancel;multiplication;multiply;x
+✖,cancel;multiplication;multiply
 ❌,cancel;mark;multiplication;multiply;x
 ❎,mark;square
 ➕,math;plus;and
@@ -960,18 +960,16 @@
 🔤,abc;alphabet
 🅰,a
 🆎,ab
-🅱,b
 🆑,cl
 🆒,cool
 🆓,free
-ℹ,i;information
+ℹ,information
 🆔,id;identity
-Ⓜ,m
 🆕,new
 🆖,ng
-🅾,blood;o
+🅾,blood
 🆗,ok
-🅿,parking;p
+🅿,parking
 🆘,help;sos
 🆙,mark;up
 🆚,versus;vs
