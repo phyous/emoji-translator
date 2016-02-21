@@ -48,7 +48,7 @@ public class Server {
             ALL("/.*", new RouteHandler() {
                 @Override
                 public void handle(RouteContext routeContext) {
-                    log.info("Request for {} '{}'", routeContext.getRequestMethod(), routeContext.getRequestUri());
+                    log.info("Request for {} '{}' ({})", routeContext.getRequestMethod(), routeContext.getRequestUri(), routeContext.getRequest().getClientIp());
                     routeContext.next();
                 }
             });
