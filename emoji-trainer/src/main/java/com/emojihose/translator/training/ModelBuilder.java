@@ -42,8 +42,10 @@ public class ModelBuilder {
         PrintWriter writer = new PrintWriter(outputFile, "UTF-8");
         wordToEmojiMap.entrySet().stream().forEach(x -> {
             EmojiModelPair pair = x.getValue();
-            String pathString = Joiner.on(";").join(pair.getPath());
-            writer.println(x.getKey() + "," + pair.getEmoji() + "," + pathString);
+            if(!pair.getEmoji().equals("*")) {
+                String pathString = Joiner.on(";").join(pair.getPath());
+                writer.println(x.getKey() + "," + pair.getEmoji() + "," + pathString);
+            }
         });
         writer.close();
         System.out.println("=== FINISHED building model");
@@ -88,7 +90,7 @@ public class ModelBuilder {
             pathCopy.add(0, wordKey);
             EmojiModelPair newPair = new EmojiModelPair(mappedEmoji, pathCopy);
             List<String> synonyms = wordGraph.getOrDefault(wordKey, ImmutableList.of());
-            if (!synonyms.isEmpty()) {
+            if (!mappedEmoji.equals("*")) {
                 processNewWords(newPair, synonyms);
             } 
         }
