@@ -5,7 +5,7 @@
         <meta content="IE=edge" http-equiv="X-UA-Compatible">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>Emoji Translator</title>
+        <title>Emojit</title>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
@@ -22,19 +22,19 @@
     <div class="container">
 
       <form id="translateForm" class="form-signin">
-        <h2 class="form-signin-heading">Emojihose</h2>
-        <div>
+        <h2 class="form-group-heading">Emojit</h2>
+        <div class="form-group">
         	<label for="inputText" class="sr-only">Text to translate</label>
         	<input type="text" id="inputText" class="form-control" placeholder="Text goes here" autofocus required>
         	<label id="translationResult" class="sr-only">translated text</label>
         </div>
-        <button id="submitButton" class="btn btn-lg btn-primary btn-block" type="submit">Emojify</button>
+        <div class="form-group">
+            <button id="submitButton" class="btn btn-lg btn-primary btn-block" type="submit">Emoj-it!</button>
+        </div>
+        <div class="form-group">
+            <h2 id="translatedText"></h4>
+        </div>
       </form>
-
-      <div>
-        <p id="translatedText"/></p>
-      <div>
-
     </div>
     </body>
 </html>
