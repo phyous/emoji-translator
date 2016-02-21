@@ -9,11 +9,16 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import ro.pippo.controller.Controller;
 import ro.pippo.core.Param;
 
 public class TranslatorController extends Controller {
 
+    private static final Logger log = LoggerFactory.getLogger(TranslatorController.class);
+    
     Map<String, String> wordToEmojiMap;
     Pattern patternWithSpaces;
     Pattern patternNoSpaces;
@@ -42,10 +47,14 @@ public class TranslatorController extends Controller {
     }
 
     private String translateSentence(String sentence) {
-        return applyPattern(
+        String ret = applyPattern(
             applyPattern(sentence, patternWithSpaces),
             patternNoSpaces
         );
+
+        log.info(String.format("=== Translate[%s] -> [%s]", sentence, ret));
+        
+        return ret;
     }
 
     private String applyPattern(String text, Pattern p) {
