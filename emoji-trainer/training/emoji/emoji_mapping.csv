@@ -1,4 +1,4 @@
-*,is;to;was;with;as
+*,is;to;was;with;as;re
 😀,face;grin
 😁,face;grin;smile;teeth
 😂,face;joy;laugh;tear
@@ -8,7 +8,7 @@
 😉,face;wink
 😊,blush;face;smile
 😋,delicious;face;savouring;smile;yum
-😎,bright;cool;eyewear;face;smile;sun;sunglasses;weather
+😎,bright;cool;eyewear;face;smile;sunglasses;weather
 😍,face;heart;love;smile
 😘,face;heart;kiss
 😗,face;kiss
@@ -31,7 +31,7 @@
 😯,face;hushed;stunned;surprised
 😪,face;sleep
 😫,face;tired
-😴,face;sleep;zzz
+😴,face;sleep
 😌,face;relieved
 🤓,face;geek;nerd;glasses
 😛,face;tongue
@@ -63,7 +63,7 @@
 😰,blue;cold;face;mouth;rushed;sweat
 😱,face;fear;fearful;munch;scared;scream
 😳,dazed;face;flushed
-😵,dizzy;face
+😵,dizzy;face;drunk
 😡,angry;face;mad;pouting;rage;red
 😠,angry;face;mad
 😈,face;fairytale;fantasy;horns;smile
@@ -179,7 +179,7 @@
 💟,heart;crochet
 ❣,exclamation;heart;mark;punctuation;not
 💌,heart;letter;love;mail;romance
-💤,comic;sleep
+💤,sleep;zzz;sleepy;nap
 💢,angry;comic;mad
 💣,comic;bomb;explosive
 💥,boom;comic
@@ -276,7 +276,7 @@
 🐳,face;spouting;whale
 🐋,whale;sperm
 🐬,flipper;dolphin
-🐟,pisces;zodiac
+🐟,fish;salmon
 🐠,fish;tropical
 🐡,fish
 🐙,octopus
@@ -296,7 +296,7 @@
 🏵,plant
 🌹,flower;plant;rose
 🌺,flower;plant
-🌻,flower;plant;sun
+🌻,flower;plant
 🌼,flower;plant
 🌷,flower;plant;tulip
 🌱,plant;young;sprout
@@ -325,7 +325,7 @@
 🍒,cherry;fruit;plant
 🍓,berry;fruit;plant
 🍅,plant;vegetable
-🍆,aubergine;plant;vegetable;penis
+🍆,aubergine;plant;vegetable;penis;dick
 🌽,corn;ear;maize;maze;plant
 🌶,hot;pepper;plant
 🍄,plant;mushroom
@@ -361,7 +361,7 @@
 🍩,dessert;donut;sweet
 🍪,dessert;sweet;cookie
 🎂,birthday;cake;celebration;dessert;pastry;sweet
-🍰,cake;dessert;pastry;slice;sweet
+🍰,cake;dessert;pastry;slice;sweet;muffin
 🍫,bar;chocolate;dessert;sweet
 🍬,dessert;sweet
 🍭,candy;dessert;sweet
@@ -429,10 +429,10 @@
 ⛺,camping
 🌁,fog;weather
 🌃,night;star;weather
-🌄,morning;mountain;sun;sunrise;weather
-🌅,morning;sun;weather
-🌆,building;city;dusk;evening;landscape;sun;sunset;weather
-🌇,building;dusk;sun;weather
+🌄,morning;mountain;sunrise;weather
+🌅,morning;weather
+🌆,building;city;dusk;evening;landscape;sunset;weather
+🌇,building;dusk;weather
 🌉,bridge;night;weather
 ♨,hot;hotsprings;springs;steaming
 🌌,space;weather
@@ -446,7 +446,7 @@
 🎨,art;museum;painting;palette
 🎰,game;slot
 🚂,engine;railway;steam;train;vehicle
-🚃,car;electric;railway;train;tram;trolleybus;vehicle
+🚃,electric;railway;train;tram;trolleybus;vehicle
 🚄,railway;shinkansen;speed;train;vehicle
 🚅,bullet;railway;shinkansen;speed;train;vehicle
 🚆,railway;vehicle
@@ -455,8 +455,8 @@
 🚉,railway;train;vehicle
 🚊,trolleybus;vehicle
 🚝,vehicle
-🚞,car;mountain;railway;vehicle
-🚋,car;tram;trolleybus;vehicle
+🚞,mountain;railway;vehicle
+🚋,tram;trolleybus;vehicle
 🚌,vehicle
 🚍,bus;oncoming;vehicle
 🚎,bus;tram;trolley;vehicle
@@ -464,11 +464,11 @@
 🚐,bus;vehicle
 🚑,vehicle
 🚒,engine;fire;truck;vehicle
-🚓,car;patrol;police;vehicle
-🚔,car;oncoming;police;vehicle
+🚓,patrol;police;vehicle
+🚔,oncoming;police;vehicle
 🚕,vehicle
 🚖,oncoming;taxi;vehicle
-🚗,car;vehicle
+🚗,car;vehicle;drive
 🚘,automobile;car;oncoming;vehicle
 🚙,recreational;rv;vehicle
 🚚,delivery;truck;vehicle
@@ -561,11 +561,11 @@
 🌟,glittery;glow;shining;sparkle;star
 🌠,falling;shooting;space;star
 ☁,weather
-⛅,cloud;sun;weather
+⛅,cloud;weather
 ⛈,cloud;rain;thunder;weather
-🌤,cloud;sun;weather
-🌥,cloud;sun;weather
-🌦,cloud;rain;sun;weather
+🌤,cloud;weather
+🌥,cloud;weather
+🌦,cloud;rain;weather
 🌧,cloud;rain;weather
 🌨,cloud;cold;snow;weather
 🌩,cloud;lightning;weather
@@ -577,7 +577,7 @@
 🌂,clothing;rain;umbrella;weather
 ☂,clothing;rain;weather
 ☔,clothing;drop;rain;umbrella;weather
-⛱,rain;sun;umbrella;weather
+⛱,rain;umbrella;weather
 ⚡,danger;electric;electricity;lightning;voltage;zap
 ❄,cold;snow;weather
 ☃,cold;snow;weather
@@ -684,7 +684,7 @@
 📠,fax
 🔋,battery
 🔌,electric;electricity;plug
-💻,laptop;mac
+💻,laptop;mac;hacker
 🖥,computer;desktop
 🖨,printer
 ⌨,computer
