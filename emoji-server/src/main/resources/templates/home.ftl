@@ -9,10 +9,13 @@
       <input type="text" id="inputText" class="form-control" placeholder="Enter text here" autofocus required>
       <label id="translationResult" class="sr-only">translated text</label>
     </div>
-    <div class="form-group">
+    <div class="form-group" style="position:relative">
       <div class="center-block" style="max-width:200px">
         <button id="submitButton" class="btn btn-lg btn-primary btn-block" type="submit">Emoj-it!</button>
       </div>
+      <button id="copyButton" class="btn btn-secondary" type="button" data-clipboard-target="#translatedText" style="position:absolute;right:0px;display:none;" >
+        <span class="glyphicon glyphicon-copy"></span>
+      </button>
     </div>
     <div class="form-group" style="position:relative;">
       <button id="copyButton" class="btn btn-secondary" type="button" data-clipboard-target="#translatedText" style="position:absolute;right:0px; top:0px;display:none;" >Copy</button>
