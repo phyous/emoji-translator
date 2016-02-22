@@ -4,8 +4,11 @@ function invokeShare(urlFormat)
     window.open(shareUrl, "_blank");
 }
 
-function translateText(textToTranslate) {
-    history.pushState(null, null, window.location.origin + "?text=" + encodeURI(textToTranslate));
+function translateText(textToTranslate, pushHistory) {
+	if (pushHistory) {
+	    history.pushState(null, null, window.location.origin + "?text=" + encodeURI(textToTranslate));
+	}
+
     $.get("/api/translate?text=" + textToTranslate, function(data, textStatus)
     {
     	$("#translatedText").text(data);
@@ -37,6 +40,8 @@ function translateFromQuery() {
 		$("#translatedText").text("");
 		$("#inputText").val("");
 	}
+
+	return false;
 }
 
 $( document ).ready(function() {
@@ -49,7 +54,7 @@ $( document ).ready(function() {
 	});
 
 	$('#translateForm').submit(function (event) {
-		translateText($('#inputText').val());
+		translateText($('#inputText').val(), true);
 	    return false;
 	});
 });
