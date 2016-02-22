@@ -9,8 +9,8 @@
 😊,blush;face;smile
 😋,delicious;face;savouring;smile;yum
 😎,bright;cool;eyewear;face;smile;sunglasses
-😍,face;heart;love;smile
-😘,face;heart;kiss
+😍,face;love;smile
+😘,face;kiss
 😗,face;kiss
 😙,face;kiss;smile
 😚,closed;face;kiss
@@ -128,7 +128,7 @@
 💃,dancer
 🕴,business;suit
 💏,couple;romance
-💑,couple;heart;love;romance;like
+💑,couple;love;romance;like
 👪,child;father;mother
 👫,couple;hand;hold;heteronormative
 👬,couple;hand;hold;twins;zodiac;gay
@@ -162,23 +162,22 @@
 👁,body;i;eye
 👅,body;tongue;lick
 👄,body;lips
-💋,heart;kiss;lips;mark;romance
-💘,arrow;cupid;heart;romance
-❤,heart;love
-💓,beating;heart;heartbeat;pulsating
-💔,break;broken;heart
-💕,heart;love
-💖,excited;heart;sparkle
-💗,excited;growing;heart;heartpulse;nervous
-💙,blue;heart
-💚,green;heart
-💛,heart;yellow
-💜,heart;purple;purple heart
-💝,heart;ribbon;valentine
-💞,heart;revolving
-💟,heart;crochet
-❣,exclamation;heart;mark;punctuation;not
-💌,heart;letter;love;mail;romance
+💋,kiss;lips;mark;romance
+💘,arrow;cupid;romance
+💓,beating;heartbeat;pulsating
+💔,break;broken
+💕,love
+💖,excited;sparkle;heart
+💗,excited;growing;heartpulse;nervous
+💙,blue
+💚,green
+💛,yellow
+💜,purple;purple heart
+💝,ribbon;valentine
+💞,revolving
+💟,crochet
+❣,exclamation;mark;punctuation;not
+💌,letter;love;mail;romance
 💤,sleep;zzz;sleepy;nap
 💢,angry;comic;mad
 💣,comic;bomb;explosive
@@ -221,7 +220,7 @@
 🐵,face;monkey
 🐒,monkey
 🐶,dog;face;pet
-🐕,pet;dog
+🐕,pet;dog;bitch;bitches
 🐩,dog;poodle
 🐺,face;wolf
 🐱,cat;face;pet
@@ -647,7 +646,7 @@
 🕹,game;videogame
 🎲,dice;die;game
 ♠,card;game;spade;suit
-♥,card;game;heart;hearts;suit
+♥,card;game;hearts;suit
 ♦,card;diamond;diamonds;game;suit
 ♣,card;club;clubs;game;suit
 🃏,card;game;playing
