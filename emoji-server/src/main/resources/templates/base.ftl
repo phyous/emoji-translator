@@ -87,23 +87,31 @@
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="#">Emojit!</a>
+      <img style="margin-top: 8px" class="sharebutton" src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter"
+           onclick="invokeShare('https://twitter.com/share?url={0}&amp;text={1}&amp;hashtags=emojit');"/>
+      <img style="margin-top: 8px" class="sharebutton" src="https://simplesharebuttons.com/images/somacro/reddit.png" alt="Reddit"
+           onclick="invokeShare('http://reddit.com/submit?url={0}&amp;title=Check%20out%20my%20emoji%20translation%20with%20emojit!')"/>
+      <img style="margin-top: 8px" class="sharebutton" src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook"
+           onclick="invokeShare('http://www.facebook.com/sharer.php?u={0}')"/>
     </div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li><a href="#">Translate <span class="sr-only">(current)</span></a></li>
-        <li><a href="/about">About</a></li>
-      </ul>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><a href="#">Translate <span class="sr-only">(current)</span></a></li>
+          <li><a href="/about">About</a></li>
+        </ul>
 
-    </div><!-- /.navbar-collapse -->
+      </div><!-- /.navbar-collapse -->
+    
   </div><!-- /.container-fluid -->
 </nav>
 
