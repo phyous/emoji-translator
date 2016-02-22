@@ -15,16 +15,16 @@
 😙,kiss
 😚,closed;face;kiss
 ☺,face;outlined;relaxed;smile
-🙂,face;smile
+🙂,face;content
 🤗,face;hug;hugging
-😇,angel;face;fairytale;fantasy;halo;innocent;smile
-🤔,face;thinking
-😐,deadpan;face;neutral
+😇,angel;halo;innocent;smile
+🤔,thinking;think
+😐,deadpan;neutral
 😑,expressionless;face;inexpressive;unexpressive
 😶,face;mouth;quiet;silent
 🙄,eyes;face;rolling
 😏,face;smirk
-😣,face;persevere
+😣,face;persevere;disgust
 😥,disappointed;face;relieved;whew
 😮,face;mouth;sympathy
 🤐,face;mouth;zipper
@@ -136,7 +136,7 @@
 💪,biceps;flex;muscle
 👈,point
 👉,point;that;there
-☝,body;finger;hand;index;point;up
+☝,body;finger;hand;index;point
 👆,backhand;body;finger;hand;index;point;up
 🖕,body;finger;hand;fuck you;fuck;fucker;fucking
 👇,backhand;body;down;finger;hand;index;point;this;here
@@ -146,7 +146,7 @@
 🖐,body;finger;hand;splayed
 ✋,body;hand
 👌,body;hand;ok
-👍,+1;body;hand;thumb;up
+👍,+1;body;hand;thumb
 👎,-1;body;down;hand;thumb
 ✊,body;clenched;fist;hand;punch
 👊,body;clenched;fist;hand;punch
@@ -307,7 +307,7 @@
 🌿,leaf;plant
 ☘,plant
 🍀,4;clover;four;leaf;plant;lucky;luck
-🍁,falling;leaf;maple;plant
+🍁,falling;maple;plant
 🍂,falling;leaf;plant
 🍃,blow;flutter;leaf;plant;wind
 🍇,fruit;grape;plant
@@ -321,10 +321,10 @@
 🍏,apple;fruit;green;plant
 🍐,fruit;plant;pear
 🍑,fruit;plant;peach
-🍒,cherry;fruit;plant
-🍓,berry;fruit;plant
-🍅,plant;vegetable
-🍆,aubergine;plant;vegetable;penis;dick;cock
+🍒,cherry;
+🍓,berry;strawberry
+🍅,tomato
+🍆,aubergine;plant;vegetable;penis;dick;cock;eggplant
 🌽,corn;ear;maize;maze;plant
 🌶,hot;pepper;plant
 🍄,plant;mushroom
@@ -345,9 +345,9 @@
 🍘,cracker;rice
 🍙,japanese;rice
 🍚,cooked;rice
-🍛,curry;rice
-🍜,bowl;noodle;ramen;steaming
-🍝,pasta
+🍛,curry
+🍜,bowl;noodle;ramen;steaming;soup
+🍝,pasta;spaghetti
 🍠,potato;roasted;sweet
 🍢,kebab;seafood;skewer;stick
 🍣,sushi
@@ -374,14 +374,14 @@
 🍷,bar;beverage;drink;glass;wine
 🍸,bar;cocktail;drink;glass
 🍹,bar;drink;tropical
-🍺,bar;beer;drink;mug
+🍺,bar;beer;drink;mug;drunk
 🍻,bar;beer;clink;drink;mug
 🍽,fork;knife;plate
 🍴,fork;knife
 🍳,egg;frying;pan;cooking
 🏺,drink;jug;tool;weapon
 🌍,africa;earth;europe;globe;world
-🌎,americas;earth;globe;world
+🌎,americas;earth;globe;world;country
 🌏,asia;australia;earth;globe;world
 🌐,earth;globe;meridians;world
 🗺,map;world
@@ -390,7 +390,7 @@
 🌋,eruption;mountain
 🗻,fuji;mountain
 🏕,camping
-🏖,beach;umbrella
+🏖,beach;umbrella;vacation
 🏜,desert
 🏝,desert;island
 🏞,park
@@ -449,11 +449,11 @@
 🚄,railway;shinkansen;speed;train;vehicle
 🚅,bullet;railway;shinkansen;speed;train;vehicle
 🚆,railway;vehicle
-🚇,subway;vehicle
-🚈,railway;vehicle
-🚉,railway;train;vehicle
+🚇,subway
+🚈,railway;rail
+🚉,railway;train
 🚊,trolleybus;vehicle
-🚝,vehicle
+🚝,muni
 🚞,mountain;railway;vehicle
 🚋,tram;trolleybus;vehicle
 🚌,vehicle
@@ -480,7 +480,7 @@
 🚨,beacon;car;light;police;revolving;vehicle
 🚥,light;signal;traffic
 🚦,light;signal;traffic
-🚧,barrier
+🚧,barrier;block
 ⚓,ship;tool
 ⛵,boat;resort;sea;vehicle;yacht
 🚣,boat;vehicle
@@ -493,7 +493,7 @@
 🛩,airplane;vehicle
 🛫,airplane;check-in;departure;departures;vehicle
 🛬,airplane;arrivals;arriving;landing;vehicle
-💺,chair
+💺,chair;sit
 🚁,vehicle
 🚟,railway;suspension;vehicle
 🚠,cable;gondola;mountain;vehicle
@@ -505,7 +505,7 @@
 🛌,hotel;sleep
 🛏,hotel;sleep
 🛋,couch;hotel;lamp
-🚽,toilet
+🚽,toilet;crapper;washroom;restroom
 🚿,shower
 🛀,bathtub;bath
 🛁,bath
@@ -726,7 +726,7 @@
 🗞,news;newspaper;paper;rolled
 📑,bookmark;mark;marker;tabs
 🔖,mark
-💰,bag;dollar;money;moneybag;grand
+💰,bag;dollar;money;moneybag;grand;lend
 💴,bank;banknote;bill;currency;money;note;yen
 💵,bank;banknote;bill;currency;dollar;money;note
 💶,bank;banknote;bill;currency;euro;money;note
