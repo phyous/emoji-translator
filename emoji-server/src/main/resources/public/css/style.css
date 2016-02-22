@@ -2,3 +2,9 @@
    width: 32px;
    height: 32px;
 }
+
+#copyButton {
+	right:0px;
+	top:0px;
+	position: relative;
+}
