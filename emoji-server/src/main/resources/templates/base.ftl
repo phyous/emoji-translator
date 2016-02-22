@@ -26,6 +26,9 @@
 
   <#--Linkedin profiles-->
   <script src="//platform.linkedin.com/in.js" type="text/javascript"></script>
+
+  <#--Clipboard.js-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.5/clipboard.min.js"></script>
   
   <link href="${publicAt('css/style.css')}" rel="stylesheet">
   <link href="${publicAt('css/bootstrap-social.css')}" rel="stylesheet">

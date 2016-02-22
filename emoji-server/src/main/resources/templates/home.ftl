@@ -14,7 +14,8 @@
         <button id="submitButton" class="btn btn-lg btn-primary btn-block" type="submit">Emoj-it!</button>
       </div>
     </div>
-    <div class="form-group">
+    <div class="form-group" style="position:relative;">
+      <button id="copyButton" class="btn btn-secondary" type="button" data-clipboard-target="#translatedText" style="position:absolute;right:0px; top:0px;display:none;" >Copy</button>
       <h2 id="translatedText"></h2>
     </div>
   </form>

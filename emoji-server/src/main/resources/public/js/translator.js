@@ -9,6 +9,7 @@ function translateText(textToTranslate) {
     $.get("/api/translate?text=" + textToTranslate, function(data, textStatus)
     {
     	$("#translatedText").text(data);
+    	$("#copyButton").show();
     });	
 }
 
@@ -39,7 +40,7 @@ function translateFromQuery() {
 }
 
 $( document ).ready(function() {
-
+	clipboard = new Clipboard('#copyButton');
     $(window).bind('popstate', translateFromQuery);
     translateFromQuery();
 
