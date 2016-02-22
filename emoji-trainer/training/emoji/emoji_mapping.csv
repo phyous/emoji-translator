@@ -7,7 +7,7 @@
 😆,face;laugh;mouth;satisfied;smile
 😉,face;wink
 😊,blush;face;smile
-😋,delicious;face;savouring;smile;yum
+😋,delicious;face;savouring;smile;yum;taste;eat;ate
 😎,bright;cool;eyewear;face;smile;sunglasses
 😍,face;love;smile
 😘,face;kiss
@@ -36,7 +36,7 @@
 🤓,face;geek;nerd;glasses
 😛,face;tongue
 😜,face;joke;tongue;wink
-😝,face;horrible;taste;tongue
+😝,face;horrible;tongue
 ☹,face;frown
 🙁,face;frown
 😒,face;unamused;unhappy
@@ -64,7 +64,7 @@
 😱,face;fear;fearful;munch;scared;scream
 😳,dazed;face;flushed
 😵,dizzy;face;drunk
-😡,angry;face;mad;pouting;rage;red
+😡,angry;face;mad;pouting;rage;red;hate
 😠,angry;face;mad
 😈,face;fairytale;fantasy;horns;smile
 👿,demon;devil;face;fairytale;fantasy
