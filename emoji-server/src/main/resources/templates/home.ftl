@@ -3,7 +3,7 @@
 <div class="container">
 
   <form id="translateForm" class="form-signin">
-    <h2 class="form-group-heading">Translate English to Emoji</h2>
+    <h2 style="margin-top: 0px;" class="form-group-heading">Translate to Emoji</h2>
     <div class="form-group">
       <label for="inputText" class="sr-only">Text to translate</label>
       <input type="text" id="inputText" class="form-control" placeholder="Enter text here" autofocus required>
